@@ -1,0 +1,23 @@
+
+### Post new account #1
+POST {{server}}/api/v1/accounts
+Content-Type: application/json
+
+{
+  "name": "my savings",
+  "number": "001-2345-6789",
+  "type": "savings"
+}
+
+### Post new account #2
+POST {{server}}/api/v1/accounts
+Content-Type: application/json
+
+{
+  "name": "my credit",
+  "number": "991-2345-6789",
+  "type": "credit"
+}
+
+### List all accounts
+GET {{server}}/api/v1/accounts

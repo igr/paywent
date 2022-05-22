@@ -1,5 +1,5 @@
 
-### Post new profile
+### Post new profile #1
 POST {{server}}/api/v1/profiles
 Content-Type: application/json
 
@@ -7,5 +7,13 @@ Content-Type: application/json
   "name": "Markes"
 }
 
-### List of all profiles
+### Post new profile #2
+POST {{server}}/api/v1/profiles
+Content-Type: application/json
+
+{
+  "name": "Julian"
+}
+
+### List all profiles
 GET {{server}}/api/v1/profiles

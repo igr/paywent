@@ -1,3 +1,6 @@
 logging:
   level:
-    com.zaxxer.hikari.pool.HikariPool: DEBUG
+    com.zaxxer.hikari.pool.HikariPool: INFO
+spring:
+  jpa:
+    show-sql: true

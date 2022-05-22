@@ -18,6 +18,9 @@ public interface ProfileEntityMapper extends ProfileIdMappers {
     Profile toModel(ProfileEntity profileEntity);
 
     default ProfileEntity toEntity(final NewProfile newProfile) {
-        return ProfileEntity.builder().name(newProfile.getName()).createdAt(Instant.now()).build();
+        return ProfileEntity.builder()
+                .name(newProfile.getName())
+                .createdAt(Instant.now())
+                .build();
     }
 }
