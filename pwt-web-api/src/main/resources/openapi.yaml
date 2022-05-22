@@ -1,0 +1,118 @@
+openapi: 3.0.3
+info:
+  version: 1.0.0
+  title: Paywent API
+  contact:
+    name: Igor Spasić
+    url: 'https://igo.rs'
+    email: igor.spasic@gmail.com
+servers:
+  - url: 'http://localhost:8080/api/v1'
+    description: dev
+tags:
+  - name: profiles
+    description: Profiles
+components:
+  schemas:
+    NewProfileRequest:
+      type: object
+      properties:
+        name:
+          type: string
+      title: NewProfileRequest
+    ProfileResponse:
+      type: object
+      title: ProfileResponse
+      x-examples: {}
+      properties:
+        id:
+          type: string
+          readOnly: true
+        name:
+          type: string
+          readOnly: true
+        createdAt:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+        - id
+        - name
+        - createdAt
+paths:
+  /profiles:
+    post:
+      summary: Creates a new Profile.
+      operationId: postProfile
+      tags:
+        - profiles
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewProfileRequest'
+      responses:
+        '201':
+          description: Created Profile.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProfileResponse'
+      description: Creates a new profile.
+    get:
+      summary: Returns a list of Profiles.
+      operationId: getProfiles
+      responses:
+        '200':
+          description: A list of Profiles.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProfileResponse'
+              examples: {}
+      description: List all profiles
+      tags:
+        - profiles
+  '/profiles/{id}':
+    get:
+      summary: Gets a Profile by its ID.
+      description: Returns a single Profile.
+      operationId: getProfileById
+      tags:
+        - profiles
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The Profile's ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Requested Profile.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProfileResponse'
+              examples: {}
+        '404':
+          description: The Profile does not exists.
+    delete:
+      summary: Deletes a Profile by its given ID.
+      operationId: deleteProfileById
+      tags:
+        - profiles
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The ID of the Profile.
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Requested Profile is deleted and does not exist any more.
+      description: Deletes a profile.

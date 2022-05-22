@@ -1,0 +1,11 @@
+
+### Post new profile
+POST {{server}}/api/v1/profiles
+Content-Type: application/json
+
+{
+  "name": "Markes"
+}
+
+### List of all profiles
+GET {{server}}/api/v1/profiles
