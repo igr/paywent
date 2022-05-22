@@ -7,5 +7,4 @@ import java.util.UUID;
 
 @Repository
 public interface ProfileCrudRepository extends CrudRepository<ProfileEntity, UUID> {
-
 }
