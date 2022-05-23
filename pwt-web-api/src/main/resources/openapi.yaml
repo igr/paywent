@@ -78,12 +78,6 @@ components:
           $ref: '#/components/schemas/AccountType'
         number:
           type: string
-    PaymentAcceptedResponse:
-      title: PaymentAcceptedResponse
-      type: object
-      properties:
-        id:
-          type: string
     PaymentResponse:
       title: PaymentResponse
       type: object
@@ -107,6 +101,23 @@ components:
     PaymentStatus:
       title: PaymentStatus
       type: string
+    NewPaymentRequest:
+      title: NewPaymentRequest
+      type: object
+      properties:
+        amount:
+          type: string
+        currency:
+          type: string
+        originator:
+          type: string
+        beneficiary:
+          type: string
+        sender:
+          type: string
+        receiver:
+          type: string
+      description: New payment request.
 paths:
   /profiles:
     post:
@@ -221,15 +232,20 @@ paths:
       summary: Initiate a payment.
       operationId: post-payments
       responses:
-        '202':
-          description: Accepted
+        '200':
+          description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PaymentAcceptedResponse'
+                $ref: '#/components/schemas/PaymentResponse'
       description: Initiate a payment.
       tags:
         - payments
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewPaymentRequest'
   '/payment/{id}':
     parameters:
       - schema:

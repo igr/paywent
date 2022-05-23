@@ -14,8 +14,7 @@ public interface ProfilesApiMapper extends ProfileIdMappers, TimeMappers {
 
 	NewProfile mapToNewProfile(NewProfileRequest newProfileRequest);
 
-	@Mapping(source = "id", target = "id", qualifiedByName = mapProfileIdToString)
+	@Mapping(source = "id", target = "id", qualifiedBy = MapProfileIdToString.class)
 	ProfileResponse mapToProfileResponse(Profile profile);
-
 
 }

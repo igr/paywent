@@ -1,0 +1,13 @@
+### Create payment
+
+POST {{server}}/api/v1/payments
+Content-Type: application/json
+
+{
+  "amount": "100",
+  "currency": "USD",
+  "originator": "fb6496e9-d641-4a51-b94a-6a2f5aab6867",
+  "beneficiary": "c9f507b8-add8-42fe-ae84-4f2fd44ca44e",
+  "sender": "3bdf6f4e-10df-46a1-acd2-05701c5e8431",
+  "receiver": "fbb5fdb0-3b04-4d0c-801a-29446373e222"
+}

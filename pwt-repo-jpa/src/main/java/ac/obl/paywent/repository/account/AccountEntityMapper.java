@@ -11,10 +11,10 @@ import java.time.Instant;
 @Mapper(componentModel = "spring")
 public interface AccountEntityMapper extends AccountIdMappers {
 
-	@Mapping(target = "id", source = "id", qualifiedByName = mapAccountIdToUuid)
+	@Mapping(target = "id", source = "id", qualifiedBy = MapAccountIdToUUID.class)
 	AccountEntity toEntity(Account account);
 
-	@Mapping(target = "id", source = "id", qualifiedByName = mapUuidToAccountId)
+	@Mapping(target = "id", source = "id", qualifiedBy = MapUUIDToAccountId.class)
 	Account toModel(AccountEntity accountEntity);
 
 	default AccountEntity toEntity(final NewAccount newAccount) {

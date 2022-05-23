@@ -13,7 +13,7 @@ public interface AccountsApiMapper extends AccountIdMappers {
 
 	NewAccount mapToNewAccount(NewAccountRequest newAccountRequest);
 
-
-	@Mapping(source = "id", target = "id", qualifiedByName = mapAccountIdToString)
+	@Mapping(source = "id", target = "id", qualifiedBy = MapAccountIdToString.class)
 	AccountResponse mapToAccountResponse(Account account);
+
 }

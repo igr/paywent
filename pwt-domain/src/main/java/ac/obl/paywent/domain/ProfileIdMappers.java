@@ -1,30 +1,58 @@
 package ac.obl.paywent.domain;
 
-import org.mapstruct.Named;
+import org.mapstruct.Qualifier;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 import java.util.UUID;
 
 public interface ProfileIdMappers {
 
-    String mapProfileIdToUuid = "mapProfileIdToUuid";
+    @Qualifier
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.CLASS)
+    @interface MapProfileIdToUUID {
+    }
 
-    @Named(mapProfileIdToUuid)
-    default UUID mapProfileIdToUuid(final ProfileId profileId) {
+    @MapProfileIdToUUID
+    default UUID mapProfileIdToUUID(final ProfileId profileId) {
         return profileId.getId();
     }
 
-    String mapUuidToProfileId = "mapUuidToProfileId";
+    @Qualifier
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.CLASS)
+    @interface MapUUIDToProfileId {
+    }
 
-    @Named(mapUuidToProfileId)
-    default ProfileId mapUuidToProfileId(final UUID uuid) {
+    @MapUUIDToProfileId
+    default ProfileId mapUUIDToProfileId(final UUID uuid) {
         return new ProfileId(uuid);
     }
 
-    String mapProfileIdToString = "mapProfileIdToString";
+    @Qualifier
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.CLASS)
+    @interface MapProfileIdToString {
+    }
 
-    @Named(mapProfileIdToString)
+    @MapProfileIdToString
     default String mapProfileIdToString(final ProfileId profileId) {
         return profileId.toString();
+    }
+
+
+    @Qualifier
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.CLASS)
+    @interface MapStringToProfileId {
+    }
+
+    @MapStringToProfileId
+    default ProfileId mapStringToProfileId(final String profileId) {
+        return new ProfileId(profileId);
     }
 
 }

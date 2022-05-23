@@ -1,30 +1,56 @@
 package ac.obl.paywent.domain;
 
-import org.mapstruct.Named;
+import org.mapstruct.Qualifier;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 import java.util.UUID;
 
 public interface AccountIdMappers {
+	@Qualifier
+	@Target(ElementType.METHOD)
+	@Retention(RetentionPolicy.CLASS)
+	@interface MapAccountIdToUUID {
+	}
 
-	String mapAccountIdToUuid = "mapAccountIdToUuid";
-
-	@Named(mapAccountIdToUuid)
-	default UUID mapAccountIdToUuid(final AccountId accountId) {
+	@MapAccountIdToUUID
+	default UUID mapAccountIdToUUID(final AccountId accountId) {
 		return accountId.getId();
 	}
 
-	String mapUuidToAccountId = "mapUuidToAccountId";
+	@Qualifier
+	@Target(ElementType.METHOD)
+	@Retention(RetentionPolicy.CLASS)
+	@interface MapUUIDToAccountId {
+	}
 
-	@Named(mapUuidToAccountId)
-	default AccountId mapUuidToAccountId(final UUID uuid) {
+	@MapUUIDToAccountId
+	default AccountId mapUUIDToAccountId(final UUID uuid) {
 		return new AccountId(uuid);
 	}
 
-	String mapAccountIdToString = "mapAccountIdToString";
+	@Qualifier
+	@Target(ElementType.METHOD)
+	@Retention(RetentionPolicy.CLASS)
+	@interface MapAccountIdToString {
+	}
 
-	@Named(mapAccountIdToString)
+	@MapAccountIdToString
 	default String mapAccountIdToString(final AccountId accountId) {
 		return accountId.toString();
+	}
+
+	@Qualifier
+	@Target(ElementType.METHOD)
+	@Retention(RetentionPolicy.CLASS)
+	@interface MapStringToAccountId {
+	}
+
+	@MapStringToAccountId
+	default AccountId mapStringToAccountId(final String accountId) {
+		return new AccountId(accountId);
 	}
 
 }
