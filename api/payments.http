@@ -11,3 +11,7 @@ Content-Type: application/json
   "sender": "3bdf6f4e-10df-46a1-acd2-05701c5e8431",
   "receiver": "fbb5fdb0-3b04-4d0c-801a-29446373e222"
 }
+
+### Get payment
+GET {{server}}/api/v1/payment/0e030400-13af-4e02-ae16-f28d2806d6b0
+Content-Type: application/json

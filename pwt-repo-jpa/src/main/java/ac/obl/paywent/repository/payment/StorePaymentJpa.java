@@ -2,10 +2,9 @@ package ac.obl.paywent.repository.payment;
 
 import ac.obl.paywent.domain.NewPayment;
 import ac.obl.paywent.domain.Payment;
+import ac.obl.paywent.web.payment.StorePayment;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import payment.StorePayment;
-
 @Component
 @RequiredArgsConstructor
 public class StorePaymentJpa implements StorePayment {

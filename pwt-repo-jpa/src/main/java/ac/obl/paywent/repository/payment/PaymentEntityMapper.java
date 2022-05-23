@@ -27,7 +27,7 @@ public interface PaymentEntityMapper extends PaymentIdMappers, ProfileIdMappers,
 				.beneficiary(newPayment.getBeneficiary().getId())
 				.sender(newPayment.getSender().getId())
 				.receiver(newPayment.getReceiver().getId())
-				.status(PaymentStatus.ACCEPTED)
+				.status(PaymentStatus.CREATED)
 				.build();
 	}
 

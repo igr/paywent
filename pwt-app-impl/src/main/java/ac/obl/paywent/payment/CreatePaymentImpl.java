@@ -2,14 +2,14 @@ package ac.obl.paywent.payment;
 
 import ac.obl.paywent.domain.NewPayment;
 import ac.obl.paywent.domain.Payment;
+import ac.obl.paywent.web.payment.StorePayment;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import payment.StorePayment;
 
 @Component
 @RequiredArgsConstructor
-public class AcceptPaymentImpl implements AcceptPayment {
+public class CreatePaymentImpl implements CreatePayment {
 
 	private final StorePayment storePayment;
 

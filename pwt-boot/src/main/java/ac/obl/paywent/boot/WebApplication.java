@@ -11,7 +11,6 @@ public class WebApplication {
         new SpringApplicationBuilder(WebApplication.class)
                 .initializers(
                         new DotenvApplicationInitializer()
-//                new WebApplicationInitializer()
                 )
                 .run(args);
     }

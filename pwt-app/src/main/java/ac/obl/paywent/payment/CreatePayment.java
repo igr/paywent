@@ -4,6 +4,6 @@ import ac.obl.paywent.domain.NewPayment;
 import ac.obl.paywent.domain.Payment;
 
 @FunctionalInterface
-public interface AcceptPayment {
+public interface CreatePayment {
 	Payment invoke(NewPayment newPayment);
 }
