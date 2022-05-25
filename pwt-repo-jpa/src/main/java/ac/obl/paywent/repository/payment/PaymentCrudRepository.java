@@ -1,5 +1,7 @@
 package ac.obl.paywent.repository.payment;
 
+import ac.obl.paywent.domain.PaymentStatus;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
@@ -20,4 +22,7 @@ public interface PaymentCrudRepository extends CrudRepository<PaymentEntity, UUI
 					"RETURNING *;", nativeQuery = true)
 	List<PaymentEntity> selectCreatedPayments(int batchSize);
 
+	@Modifying
+	@Query("update PaymentEntity p set p.status = ?2 where p.id = ?1")
+	int updatePaymentStatus(UUID paymentId, PaymentStatus paymentStatus);
 }

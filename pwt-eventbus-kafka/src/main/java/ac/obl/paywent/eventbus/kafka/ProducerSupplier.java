@@ -19,7 +19,7 @@ public class ProducerSupplier implements Supplier<Producer<String, String>> {
 
 	@Override
 	public Producer<String, String> get() {
-		Objects.requireNonNull(this.producer, "Producer not registered");
+		Objects.requireNonNull(this.producer, "Producer not registered (yet)");
 		return producer;
 	}
 

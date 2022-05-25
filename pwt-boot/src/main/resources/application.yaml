@@ -5,7 +5,7 @@ app:
 
 pwt:
   queue:
-    enabled: false
+    enabled: true
 
 server:
   error:

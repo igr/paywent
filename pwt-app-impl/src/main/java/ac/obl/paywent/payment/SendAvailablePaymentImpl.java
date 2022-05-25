@@ -1,5 +1,7 @@
 package ac.obl.paywent.payment;
 
+import ac.obl.paywent.domain.PaymentId;
+import ac.obl.paywent.eventbus.SendMessageToEventBus;
 import ac.obl.paywent.web.payment.LockCreatedPayment;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class SendAvailablePaymentImpl implements SendAvailablePayment {
 
 	private final LockCreatedPayment lockCreatedPayment;
+	private final SendMessageToEventBus sendMessageToEventBus;
 
 	@Transactional
 	@Override
@@ -22,7 +25,9 @@ public class SendAvailablePaymentImpl implements SendAvailablePayment {
 			log.info("Nothing to send");
 			return;
 		}
-		log.info("Sending payment {}", payment.get().getId());
-		final int a = 4 / 0;    // throw exception - nothing should change.
+
+		final PaymentId paymentId = payment.get().getId();
+		log.info("Sending payment {}", paymentId);
+		sendMessageToEventBus.invoke("payment-topic", paymentId.toString());
 	}
 }

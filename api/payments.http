@@ -4,7 +4,7 @@ POST {{server}}/api/v1/payments
 Content-Type: application/json
 
 {
-  "amount": "100",
+  "amount": "99",
   "currency": "USD",
   "originator": "fb6496e9-d641-4a51-b94a-6a2f5aab6867",
   "beneficiary": "c9f507b8-add8-42fe-ae84-4f2fd44ca44e",
