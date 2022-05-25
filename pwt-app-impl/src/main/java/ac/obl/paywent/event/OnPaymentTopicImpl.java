@@ -1,6 +1,7 @@
 package ac.obl.paywent.event;
 
 import ac.obl.paywent.domain.PaymentId;
+import ac.obl.paywent.eventbus.EventMessages;
 import ac.obl.paywent.payment.MarkPaymentAsProcessed;
 import ac.obl.paywent.payment.MarkPaymentAsRejected;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +24,7 @@ public class OnPaymentTopicImpl implements OnPaymentTopic {
 	public void invoke(final String message) {
 		log.debug("Received message: {}", message);
 
-		if (message.equals("READY!")) {
+		if (message.equals(EventMessages.READY)) {
 			return;
 		}
 
