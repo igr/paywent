@@ -8,22 +8,8 @@ import ac.obl.paywent.eventbus.TopicListener;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
-@RequiredArgsConstructor
-public class StartApplication {
+@FunctionalInterface
+public interface StartApplication {
 
-	private final ConnectToEventBus connectToEventBus;
-	private final SendMessageToEventBus sendMessageToEventBus;
-	private final RegisterTopicListener registerTopicListener;
-	private final OnPaymentTopic onPaymentTopic;
-
-	private TopicListener topicListener;
-
-	// todo return running context
-	public void invoke() {
-		this.topicListener = registerTopicListener.invoke("payment-topic", onPaymentTopic::invoke);
-		this.topicListener.start();
-		connectToEventBus.invoke();
-		sendMessageToEventBus.invoke("payment-topic", "READY!");
-	}
+	AppRunningContext invoke();
 }
