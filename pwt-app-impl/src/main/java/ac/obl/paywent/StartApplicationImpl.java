@@ -2,6 +2,7 @@ package ac.obl.paywent;
 
 import ac.obl.paywent.event.OnPaymentTopic;
 import ac.obl.paywent.eventbus.ConnectToEventBus;
+import ac.obl.paywent.eventbus.EventTopics;
 import ac.obl.paywent.eventbus.RegisterTopicListener;
 import ac.obl.paywent.eventbus.SendMessageToEventBus;
 import ac.obl.paywent.eventbus.TopicListener;
@@ -17,13 +18,14 @@ public class StartApplicationImpl implements StartApplication {
 	private final RegisterTopicListener registerTopicListener;
 	private final OnPaymentTopic onPaymentTopic;
 
+	@Override
 	public AppRunningContext invoke() {
 		connectToEventBus.invoke();
 
-		TopicListener topicListener = registerTopicListener.invoke("payment-topic", onPaymentTopic::invoke);
-		topicListener.start();
+		final TopicListener topicListener = registerTopicListener.invoke(EventTopics.PAYMENT_TOPIC, onPaymentTopic::invoke)
+						.start();
 
-		sendMessageToEventBus.invoke("payment-topic", "READY!");
+		sendMessageToEventBus.invoke(EventTopics.PAYMENT_TOPIC, "READY!");
 
 		return AppRunningContext.builder()
 				.topicListener(topicListener)

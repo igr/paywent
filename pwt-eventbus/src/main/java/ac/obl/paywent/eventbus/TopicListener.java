@@ -1,7 +1,7 @@
 package ac.obl.paywent.eventbus;
 
 public interface TopicListener {
-	void start();
+	TopicListener start();
 
 	void stop();
 }

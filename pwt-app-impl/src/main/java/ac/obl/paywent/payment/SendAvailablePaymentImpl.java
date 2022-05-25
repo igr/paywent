@@ -1,6 +1,7 @@
 package ac.obl.paywent.payment;
 
 import ac.obl.paywent.domain.PaymentId;
+import ac.obl.paywent.eventbus.EventTopics;
 import ac.obl.paywent.eventbus.SendMessageToEventBus;
 import ac.obl.paywent.web.payment.LockCreatedPayment;
 import lombok.RequiredArgsConstructor;
@@ -28,6 +29,6 @@ public class SendAvailablePaymentImpl implements SendAvailablePayment {
 
 		final PaymentId paymentId = payment.get().getId();
 		log.info("Sending payment {}", paymentId);
-		sendMessageToEventBus.invoke("payment-topic", paymentId.toString());
+		sendMessageToEventBus.invoke(EventTopics.PAYMENT_TOPIC, paymentId.toString());
 	}
 }

@@ -29,7 +29,7 @@ public class RegisterTopicListenerKafka implements RegisterTopicListener {
 		properties.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, false);
 
 		final Consumer<String, String> consumer = new KafkaConsumer<>(properties);
-		consumer.subscribe(Collections.singleton("payment-topic"));
+		consumer.subscribe(Collections.singleton(topic));
 
 		return new TopicListener() {
 			boolean isRunning = true;
@@ -45,9 +45,10 @@ public class RegisterTopicListenerKafka implements RegisterTopicListener {
 			});
 
 			@Override
-			public void start() {
+			public TopicListener start() {
 				isRunning = true;
 				thread.start();
+				return this;
 			}
 
 			@Override
