@@ -18,11 +18,19 @@
 			<groupId>ac.obl</groupId>
 			<artifactId>pwt-app-impl</artifactId>
 			<version>${project.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>ac.obl</groupId>
 			<artifactId>pwt-repo-jpa</artifactId>
 			<version>${project.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>ac.obl</groupId>
+			<artifactId>pwt-eventbus-kafka</artifactId>
+			<version>${project.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>ac.obl</groupId>

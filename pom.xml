@@ -19,6 +19,8 @@
 		<module>pwt-app</module>
 		<module>pwt-app-impl</module>
 		<module>pwt-web-api</module>
+		<module>pwt-eventbus</module>
+		<module>pwt-eventbus-kafka</module>
 		<module>pwt-boot</module>
 	</modules>
 

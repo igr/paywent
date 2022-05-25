@@ -3,6 +3,10 @@ app:
   id: pwt
   log-envs: false
 
+pwt:
+  queue:
+    enabled: false
+
 server:
   error:
     include-message: always
