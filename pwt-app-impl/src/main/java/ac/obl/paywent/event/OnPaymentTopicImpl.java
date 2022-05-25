@@ -10,6 +10,10 @@ import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
+/**
+ * Listener for the payment topic messages.
+ * Makes the payment processed or rejected by random chance.
+ */
 @RequiredArgsConstructor
 @Component
 @Slf4j

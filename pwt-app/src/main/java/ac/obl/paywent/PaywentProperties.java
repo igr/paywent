@@ -6,8 +6,7 @@ import lombok.Data;
 public class PaywentProperties {
 
 	@Data
-	public class Queue {
-
+	public static class Queue {
 		private boolean enabled = true;
 	}
 
