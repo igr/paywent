@@ -2,62 +2,32 @@
 
 > Pay**M**ents made **W**ell.
 
-Java11/SpringBoot/JPA/Postgres/Kafka example of CleanArchitecture and more.
+Java11/SpringBoot/JPA/Postgres/Kafka example of Clean Architecture and more.
 
-Total time invested: `20h`.
+Total time invested: `24h`.
 
-## Modules
++ 🤘 [Project Structure](doc/structure.md)
++ ⚡️ [Architecture](doc/architecture.md)
++ 🔥 [Dev helper](doc/dev-helper.md)
++ 📥 [Remaining tasks](doc/todo.md)
 
-App is split in modules:
+## Quick Start
 
-+ `domain` - domain models and mappers.
-+ `app-impl` - apps business logic, transaction boundaries.
-+ `app` - app interfaces.
-+ `repo-api-jpa` - JPA implementation of the repo.
-+ `repo-api` - repo interfaces.
-+ `eventbus-kafka` - kafka implementation of the message bus.
-+ `eventbus` - eventbus interfaces.
-+ `web-api` - web-api layer. API-first approach.
-+ `boot` - configuration and boostrap of the web app.
+Run application:
 
-Client:
-
-+ `client` - automatically generated client.
-+ `client-example` - example of clients usage.
-
-Clean architecture, separated in modules. No implementation depends on the other implementation, only on interfaces.
-
-## Verbs, no Nouns!
-
-Services are **verbs**. I don't use anemic services.
-
-Unfortunately, Java do not offer much syntax sugar, hence the `invoke()` method is called explicitly.
-
-## Queue
-
-I use awesome Postgres locking features to build a queue.
-
-## API-First
-
-API is designed first and the routes are generated.
-
-## Client auto-generated
-
-Client is auto-generated on build. This way it always stays up-to-date.
-
-## Dev helper
-
-Don't know what to do? Run:
-
-```sh
-./pwt.sh
+```shell
+./pwt.sh dev package
+./pwt.sh app up
 ```
 
-Every company needs its own dev helper CLI tool.
+Run client example:
 
-## Remaining tasks
+```shell
+./pwt.sh run client
+```
 
-+ [ ] Add code generation
-+ [ ] API Auth
-+ [ ] Better logging
-+ [ ] Add migrations
+Lost?
+
+```shell
+./pwt.sh
+```
