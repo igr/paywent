@@ -22,6 +22,8 @@
 		<module>pwt-eventbus</module>
 		<module>pwt-eventbus-kafka</module>
 		<module>pwt-boot</module>
+		<module>client</module>
+		<module>client-example</module>
 	</modules>
 
 	<parent>

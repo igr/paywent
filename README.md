@@ -20,6 +20,11 @@ App is split in modules:
 + `web-api` - web-api layer. API-first approach.
 + `boot` - configuration and boostrap of the web app.
 
+Client:
+
++ `client` - automatically generated client.
++ `client-example` - example of clients usage.
+
 Clean architecture, separated in modules. No implementation depends on the other implementation, only on interfaces.
 
 ## Verbs, no Nouns!
@@ -35,6 +40,10 @@ I use awesome Postgres locking features to build a queue.
 ## API-First
 
 API is designed first and the routes are generated.
+
+## Client auto-generated
+
+Client is auto-generated on build. This way it always stays up-to-date.
 
 ## Dev helper
 
