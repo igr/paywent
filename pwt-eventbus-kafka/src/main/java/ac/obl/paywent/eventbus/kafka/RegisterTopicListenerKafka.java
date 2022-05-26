@@ -36,10 +36,10 @@ public class RegisterTopicListenerKafka implements RegisterTopicListener {
 			private final Thread thread = new Thread(() -> {
 				while (isRunning) {
 					final ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));
-					log.debug("Polled {} records", records.count());
-					records.forEach(record -> {
-						externalConsumer.accept(record.value());
-					});
+					log.debug("Polled {} messages", records.count());
+                    records.forEach(record -> {
+                        externalConsumer.accept(record.value());
+                    });
 					consumer.commitAsync();
 				}
 			});

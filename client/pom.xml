@@ -112,6 +112,8 @@
 							<generateApis>true</generateApis>
 							<generateModels>true</generateModels>
 							<generateSupportingFiles>true</generateSupportingFiles>
+							<generateApiTests>false</generateApiTests>
+							<generateModelTests>false</generateModelTests>
 							<configOptions>
 								<openApiNullable>true</openApiNullable>
 								<returnSuccessCode>true</returnSuccessCode>
@@ -120,7 +122,6 @@
 								<virtualService>false</virtualService>
 								<dateLibrary>java8</dateLibrary>
 								<hideGenerationTimestamp>false</hideGenerationTimestamp>
-								<generateApiTests>false</generateApiTests>
 							</configOptions>
 						</configuration>
 					</execution>

@@ -17,15 +17,13 @@ public class SendMessageToEventBusKafka implements SendMessageToEventBus {
 
 	@Override
 	public void invoke(final String topic, final String message) {
-		log.info("Sending message to topic: {}", topic);
+		log.debug("Sending message to topic: {}", topic);
 		final ProducerRecord<String, String> record = new ProducerRecord<>(topic, null, message);
 		final var future = producerSupplier.get().send(record);
 		producerSupplier.get().flush();
 
 		try {
-			log.debug("Waiting to send");
 			future.get();
-			log.debug("After");
 		} catch (final InterruptedException | ExecutionException e) {
 			throw new RuntimeException(e);
 		}

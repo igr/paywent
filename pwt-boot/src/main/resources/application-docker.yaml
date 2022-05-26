@@ -1,6 +1,6 @@
 app:
   queue:
-    kafka: "kafka:9092"
+    kafka: "kafka:29092"
 
 logging:
   level:
