@@ -1,3 +1,4 @@
 .idea
 target
+client-example/dependency-reduced-pom.xml
 git.properties

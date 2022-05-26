@@ -60,3 +60,4 @@ Every company needs its own dev helper CLI tool.
 + [ ] Add code generation
 + [ ] API Auth
 + [ ] Better logging
++ [ ] Add migrations

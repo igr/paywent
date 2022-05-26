@@ -1,6 +1,19 @@
 version: '3'
 services:
 
+  app:
+    profiles: [ "app" ]
+    build:
+      context: .
+    container_name: app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - pdb
+      - kafka
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+  
   pdb:
     image: postgres:14.2
     container_name: pdb
@@ -12,7 +25,7 @@ services:
       - POSTGRES_USER=${POSTGRES_USER:-puser}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-ppass}
     volumes:
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./docker/init.sql:/docker-entrypoint-initdb.d/init.sql
       - pdb_data:/var/lib/postgresql/data
 
   zookeeper:

@@ -1,0 +1,15 @@
+app:
+  queue:
+    kafka: "kafka:9092"
+
+logging:
+  level:
+    com.zaxxer.hikari.pool.HikariPool: WARN
+
+spring:
+  jpa:
+    show-sql: false
+  datasource:
+    jdbcUrl: jdbc:postgresql://pdb:5432/paywent?reWriteBatchedInserts=true&cachePrepStmts=true&useServerPrepStmts=true&stringtype=unspecified
+    username: puser
+    password: ${PG_PASSWORD:ppass}

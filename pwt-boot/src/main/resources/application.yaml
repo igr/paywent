@@ -33,9 +33,6 @@ spring:
     connection-timeout: 60000
     leak-detection-threshold: 25000
     maximum-pool-size: 20
-    jdbcUrl: jdbc:postgresql://localhost:5432/paywent?reWriteBatchedInserts=true&cachePrepStmts=true&useServerPrepStmts=true&stringtype=unspecified
-    username: puser
-    password: ${PG_PASSWORD:ppass}
 
 springdoc:
   api-docs:

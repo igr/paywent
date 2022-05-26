@@ -9,6 +9,10 @@ logging:
 spring:
   jpa:
     show-sql: true
+  datasource:
+    jdbcUrl: jdbc:postgresql://localhost:5432/paywent?reWriteBatchedInserts=true&cachePrepStmts=true&useServerPrepStmts=true&stringtype=unspecified
+    username: puser
+    password: ${PG_PASSWORD:ppass}
 
 
 management:
