@@ -4,6 +4,7 @@ import ac.obl.paywent.PaywentProperties;
 import org.springframework.boot.actuate.autoconfigure.endpoint.EndpointAutoConfiguration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -19,15 +20,15 @@ import static ac.obl.paywent.boot.config.ApplicationConfiguration.ALL_CLASSES;
 @EntityScan(basePackages = ALL_CLASSES)
 @EnableScheduling
 @Import(EndpointAutoConfiguration.class)
+@EnableConfigurationProperties(AppProperties.class)
 public class ApplicationConfiguration {
 
-    public static final String ALL_CLASSES = "ac.obl.paywent.*";
+    public static final String ALL_CLASSES = "ac.obl.paywent*";
 
     @ConfigurationProperties(prefix = "pwt")
     @Bean
     public PaywentProperties paywentProperties() {
         return new PaywentProperties();
     }
-
 
 }

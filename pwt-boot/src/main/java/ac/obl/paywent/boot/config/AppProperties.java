@@ -1,26 +1,22 @@
 package ac.obl.paywent.boot.config;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
+import org.springframework.boot.context.properties.ConstructorBinding;
 
-@Getter
-@Setter
+@Data
 @ConfigurationProperties("app")
-@Component
-@RequiredArgsConstructor
+@ConstructorBinding
 public class AppProperties {
 
 	/**
 	 * Application name.
 	 */
-	private String name;
+	private final String name;
 
 	/**
 	 * Application ID.
 	 */
-	private String id;
+	private final String id;
 
 }

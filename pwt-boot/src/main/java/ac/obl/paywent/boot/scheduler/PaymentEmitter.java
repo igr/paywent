@@ -13,7 +13,7 @@ public class PaymentEmitter {
 
 	private final SendAvailablePayment sendAvailablePayment;
 
-	@Scheduled(fixedDelay = 1000)
+	@Scheduled(fixedDelay = 1000, initialDelay = 3000)
 	public void scheduleFixedDelayTask() {
 		sendAvailablePayment.invoke();
 	}
