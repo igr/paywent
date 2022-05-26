@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConditionalOnProperty(value = "pwt.queue.enabled", matchIfMissing = true, havingValue = "true")
+@ConditionalOnProperty(value = "app.queue.enabled", matchIfMissing = true, havingValue = "true")
 @RequiredArgsConstructor
 public class PaymentEmitter {
 

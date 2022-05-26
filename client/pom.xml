@@ -114,15 +114,13 @@
 							<generateSupportingFiles>true</generateSupportingFiles>
 							<configOptions>
 								<openApiNullable>true</openApiNullable>
-<!--								<swaggerDocketConfig>true</swaggerDocketConfig>-->
 								<returnSuccessCode>true</returnSuccessCode>
 								<useTags>true</useTags>
 								<delegatePattern>true</delegatePattern>
 								<virtualService>false</virtualService>
 								<dateLibrary>java8</dateLibrary>
-								<hideGenerationTimestamp>true</hideGenerationTimestamp>
-<!--								<interfaceOnly>true</interfaceOnly>-->
-<!--								<skipDefaultInterface>true</skipDefaultInterface>-->
+								<hideGenerationTimestamp>false</hideGenerationTimestamp>
+								<generateApiTests>false</generateApiTests>
 							</configOptions>
 						</configuration>
 					</execution>

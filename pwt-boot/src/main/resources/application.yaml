@@ -2,10 +2,9 @@ app:
   name: Paywent
   id: pwt
   log-envs: false
-
-pwt:
   queue:
     enabled: true
+    kafka: "kafka:9092"
 
 server:
   error:

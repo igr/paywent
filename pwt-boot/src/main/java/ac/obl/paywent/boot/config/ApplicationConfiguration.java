@@ -1,9 +1,9 @@
 package ac.obl.paywent.boot.config;
 
-import ac.obl.paywent.PaywentProperties;
+import ac.obl.paywent.eventbus.QueueConfig;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.actuate.autoconfigure.endpoint.EndpointAutoConfiguration;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -21,14 +21,16 @@ import static ac.obl.paywent.boot.config.ApplicationConfiguration.ALL_CLASSES;
 @EnableScheduling
 @Import(EndpointAutoConfiguration.class)
 @EnableConfigurationProperties(AppProperties.class)
+@RequiredArgsConstructor
 public class ApplicationConfiguration {
 
     public static final String ALL_CLASSES = "ac.obl.paywent*";
 
-    @ConfigurationProperties(prefix = "pwt")
+    private final AppProperties appProperties;
+
     @Bean
-    public PaywentProperties paywentProperties() {
-        return new PaywentProperties();
+    public QueueConfig queueConfig() {
+        return appProperties.getQueue();
     }
 
 }

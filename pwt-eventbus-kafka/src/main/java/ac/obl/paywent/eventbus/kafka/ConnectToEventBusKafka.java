@@ -1,6 +1,7 @@
 package ac.obl.paywent.eventbus.kafka;
 
 import ac.obl.paywent.eventbus.ConnectToEventBus;
+import ac.obl.paywent.eventbus.QueueConfig;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -17,17 +18,19 @@ import java.util.Properties;
 public class ConnectToEventBusKafka implements ConnectToEventBus {
 	private final ProducerSupplier producerSupplier;
 
+	private final QueueConfig queueConfig;
+
 	@Override
 	public void invoke() {
-		final Properties properties = kafkaProperties();
+		final Properties properties = kafkaProperties(queueConfig.getKafka());
 		final Producer<String, String> producer = new KafkaProducer<>(properties);
 		producerSupplier.register(producer);
-		log.info("Connected to Kafka");
+		log.info("Connected to Kafka: {}", queueConfig.getKafka());
 	}
 
-	private static Properties kafkaProperties() {
+	private static Properties kafkaProperties(final String kafkaUrlAndPort) {
 		final Properties properties = new Properties();
-		properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+		properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaUrlAndPort);
 		properties.put("sasl.mechanism", "PLAIN");
 		properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 		properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());

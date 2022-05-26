@@ -55,8 +55,8 @@ Don't know what to do? Run:
 
 Every company needs its own dev helper CLI tool.
 
-## Remaining
+## Remaining tasks
 
 + [ ] Add code generation
 + [ ] API Auth
-+ [ ] Generate API Java client
++ [ ] Better logging

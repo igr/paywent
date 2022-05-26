@@ -1,5 +1,6 @@
 package ac.obl.paywent.boot.config;
 
+import ac.obl.paywent.eventbus.QueueConfig;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConstructorBinding;
@@ -18,5 +19,10 @@ public class AppProperties {
 	 * Application ID.
 	 */
 	private final String id;
+
+	/**
+	 * Queue configuration.
+	 */
+	private final QueueConfig queue;
 
 }
