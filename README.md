@@ -1,6 +1,6 @@
 # paywent (pwt)
 
-> Pay**M**ents made **W**ell.
+> Pay**M**ents **W**ent OK.
 
 Java11/SpringBoot/JPA/Postgres/Kafka example of Clean Architecture and more.
 

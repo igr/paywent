@@ -19,13 +19,21 @@ Client:
 + `client` - automatically generated client.
 + `client-example` - example of clients usage.
 
-Clean architecture, separated in modules. No implementation depends on the other implementation, only on interfaces.
+Clean architecture. Dependencies:
+
++ Interface module depends only on other interfaces.
++ Implementation module depends only on other interfaces. 
++ Boot module provides implementation.
+
+What is questionable?
+
++ While all APIs are pure functions, they do not declare the dependencies.
 
 ## Verbs, no Nouns!
 
 Services are **verbs**. I don't use anemic services.
 
-Unfortunately, Java do not offer much syntax sugar, hence the `invoke()` method is called explicitly.
+Java do not offer much syntax sugar, hence the `invoke()` method is called explicitly.
 
 ## Queue
 
@@ -34,6 +42,10 @@ I use awesome Postgres locking features to build a queue.
 ## API-First
 
 API is designed first and the routes are generated.
+
+## OpenAPI
+
+Microservices exposes its OpenAPI.
 
 ## Client auto-generated
 

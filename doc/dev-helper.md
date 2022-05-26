@@ -1,9 +1,10 @@
 # Dev Helper
 
-Don't know what to do? Run:
+Every project/company needs a tool that helps with _everything_ related to development.
+
+I've implemented an example of local tool.
 
 ```sh
 ./pwt.sh
 ```
 
-Every company needs its own dev helper CLI tool.
