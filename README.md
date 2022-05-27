@@ -1,10 +1,8 @@
 # paywent (pwt)
 
-> Pay**M**ents **W**ent OK.
+![](paywent.png)
 
 Java11/SpringBoot/JPA/Postgres/Kafka example of Clean Architecture and more.
-
-Total time invested: `24h`.
 
 + 🤘 [Project Structure](doc/structure.md)
 + ⚡️ [Architecture](doc/architecture.md)
@@ -31,3 +29,9 @@ Lost?
 ```shell
 ./pwt.sh
 ```
+
+## Facts
+
++ BSD 2-Clause License.
++ Total time invested: `24h`.
++ Fun.
