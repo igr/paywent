@@ -3,12 +3,13 @@ package ac.obl.paywent.repository.profile;
 import ac.obl.paywent.domain.NewProfile;
 import ac.obl.paywent.domain.Profile;
 import ac.obl.paywent.domain.ProfileIdMappers;
+import ac.obl.paywent.map.PwtMapperConfig;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 import java.time.Instant;
 
-@Mapper(componentModel = "spring")
+@Mapper(config = PwtMapperConfig.class)
 public interface ProfileEntityMapper extends ProfileIdMappers {
 
     @Mapping(target = "id", source = "id", qualifiedBy = MapProfileIdToUUID.class)

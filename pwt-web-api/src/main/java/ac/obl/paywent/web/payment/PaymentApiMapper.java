@@ -5,12 +5,13 @@ import ac.obl.paywent.domain.NewPayment;
 import ac.obl.paywent.domain.Payment;
 import ac.obl.paywent.domain.PaymentIdMappers;
 import ac.obl.paywent.domain.ProfileIdMappers;
+import ac.obl.paywent.map.PwtMapperConfig;
 import ac.obl.paywent.web.model.NewPaymentRequest;
 import ac.obl.paywent.web.model.PaymentResponse;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring")
+@Mapper(config = PwtMapperConfig.class)
 public interface PaymentApiMapper extends PaymentIdMappers, ProfileIdMappers, AccountIdMappers {
 
 	@Mapping(target = "originator", source = "originator", qualifiedBy = MapStringToProfileId.class)

@@ -9,37 +9,37 @@ import java.lang.annotation.Target;
 import java.util.UUID;
 
 public interface AccountIdMappers {
-	@Qualifier
-	@Target(ElementType.METHOD)
-	@Retention(RetentionPolicy.CLASS)
-	@interface MapAccountIdToUUID {
-	}
+    @Qualifier
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.CLASS)
+    @interface MapAccountIdToUUID {
+    }
 
-	@MapAccountIdToUUID
-	default UUID mapAccountIdToUUID(final AccountId accountId) {
-		return accountId.getId();
-	}
+    @MapAccountIdToUUID
+    default UUID mapAccountIdToUUID(final AccountId accountId) {
+        return accountId.getId();
+    }
+    
+    @Qualifier
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.CLASS)
+    @interface MapUUIDToAccountId {
+    }
 
-	@Qualifier
-	@Target(ElementType.METHOD)
-	@Retention(RetentionPolicy.CLASS)
-	@interface MapUUIDToAccountId {
-	}
+    @MapUUIDToAccountId
+    default AccountId mapUUIDToAccountId(final UUID uuid) {
+        return new AccountId(uuid);
+    }
 
-	@MapUUIDToAccountId
-	default AccountId mapUUIDToAccountId(final UUID uuid) {
-		return new AccountId(uuid);
-	}
+    @Qualifier
+    @Target(ElementType.METHOD)
+    @Retention(RetentionPolicy.CLASS)
+    @interface MapAccountIdToString {
+    }
 
-	@Qualifier
-	@Target(ElementType.METHOD)
-	@Retention(RetentionPolicy.CLASS)
-	@interface MapAccountIdToString {
-	}
-
-	@MapAccountIdToString
-	default String mapAccountIdToString(final AccountId accountId) {
-		return accountId.toString();
+    @MapAccountIdToString
+    default String mapAccountIdToString(final AccountId accountId) {
+        return accountId.toString();
 	}
 
 	@Qualifier

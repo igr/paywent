@@ -12,7 +12,8 @@ import java.time.Instant;
 public class Account {
 	private final AccountId id;
 	private final AccountType type;
-	private final String name;
+    private final ProfileId profileId;
+    private final String name;
 	private final String number;
 	private final Instant createdAt;
 	private final Instant updatedAt;

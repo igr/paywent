@@ -31,7 +31,7 @@ public class RunClient {
 
     public void run() throws ApiException, InterruptedException {
         final var profiles = createTwoProfiles();
-        final var accounts = createTwoAccounts();
+        final var accounts = createTwoAccountsForProfiles(profiles);
         profiles.forEach(System.out::println);
         accounts.forEach(System.out::println);
 
@@ -46,7 +46,8 @@ public class RunClient {
 
         System.out.println("Waiting for all threads to finish");
         countDownLatch.await();
-        System.out.println("Total sum posted: " + totalSum.get());
+        System.out.println("Done, total sum posted: " + totalSum.get());
+        executor.shutdown();
     }
 
     private List<ProfileResponse> createTwoProfiles() throws ApiException {
@@ -58,7 +59,7 @@ public class RunClient {
         return profilesApi.getProfiles();
     }
 
-    private List<AccountResponse> createTwoAccounts() throws ApiException {
+    private List<AccountResponse> createTwoAccountsForProfiles(final List<ProfileResponse> profiles) throws ApiException {
         final var accounts = accountsApi.getAccounts();
         if (accounts.isEmpty()) {
             accountsApi.postAccounts(
@@ -66,12 +67,14 @@ public class RunClient {
                     .name("Account A")
                     .number("111-222")
                     .type(AccountType.SAVINGS)
+                    .profileId(profiles.get(0).getId())
             );
             accountsApi.postAccounts(
                 new NewAccountRequest()
                     .name("Account X")
                     .number("999-888")
                     .type(AccountType.CREDIT)
+                    .profileId(profiles.get(1).getId())
             );
         }
         return accountsApi.getAccounts();

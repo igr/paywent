@@ -27,23 +27,26 @@ import java.util.UUID;
 @EqualsAndHashCode(of = "id")
 public class AccountEntity implements Identifiable<UUID> {
 
-	@Id
-	@GeneratedValue
-	private UUID id;
+    @Id
+    @GeneratedValue
+    private UUID id;
 
-	@Column
-	private AccountType type;
+    @Column
+    private UUID profileId;
 
-	@Column
-	private String name;
+    @Column
+    private AccountType type;
 
-	@Column
-	private String number;
+    @Column
+    private String name;
 
-	@Column
-	private Instant updatedAt;
+    @Column
+    private String number;
 
-	@Column
-	private Instant createdAt;
+    @Column
+    private Instant updatedAt;
+
+    @Column
+    private Instant createdAt;
 
 }

@@ -64,6 +64,8 @@ components:
           type: string
         number:
           type: string
+        profileId:
+          type: string
       required:
         - id
         - name
@@ -77,6 +79,8 @@ components:
         type:
           $ref: '#/components/schemas/AccountType'
         number:
+          type: string
+        profileId:
           type: string
     PaymentResponse:
       title: PaymentResponse

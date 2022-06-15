@@ -6,10 +6,11 @@ import ac.obl.paywent.domain.Payment;
 import ac.obl.paywent.domain.PaymentIdMappers;
 import ac.obl.paywent.domain.PaymentStatus;
 import ac.obl.paywent.domain.ProfileIdMappers;
+import ac.obl.paywent.map.PwtMapperConfig;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring")
+@Mapper(config = PwtMapperConfig.class)
 public interface PaymentEntityMapper extends PaymentIdMappers, ProfileIdMappers, AccountIdMappers {
 
 	@Mapping(target = "id", source = "id", qualifiedBy = MapUuidToPaymentId.class)

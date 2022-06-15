@@ -108,6 +108,8 @@
             <notNull><![CDATA[1]]></notNull>
             <uid><![CDATA[EBDAE470-79E7-47AE-B01C-2F19DC5107B7]]></uid>
         </SQLField>
+        <labelWindowIndex><![CDATA[2]]></labelWindowIndex>
+        <ui.treeExpanded><![CDATA[1]]></ui.treeExpanded>
         <uid><![CDATA[3EFAAF55-91E9-4476-A2A9-0598BDDAD978]]></uid>
     </SQLTable>
     <SQLTable>
@@ -118,8 +120,8 @@
             <y>320.00</y>
         </location>
         <size>
-            <width>256.00</width>
-            <height>140.00</height>
+            <width>220.00</width>
+            <height>160.00</height>
         </size>
         <zorder>1</zorder>
         <SQLField>
@@ -132,6 +134,22 @@
             <unique><![CDATA[1]]></unique>
         </SQLField>
         <SQLField>
+            <name><![CDATA[profile_id]]></name>
+            <type><![CDATA[uuid]]></type>
+            <referencesField>id</referencesField>
+            <referencesTable>profiles</referencesTable>
+            <referencesField><![CDATA[id]]></referencesField>
+            <referencesTable><![CDATA[profiles]]></referencesTable>
+            <sourceCardinality>1</sourceCardinality>
+            <destinationCardinality>5</destinationCardinality>
+            <referencesFieldUID><![CDATA[8EE2B7D8-AA20-41DF-8BF2-58B72FB7681D]]></referencesFieldUID>
+            <referencesTableUID><![CDATA[EE99C341-7DF7-4B2C-A8DF-48AD9E7A8512]]></referencesTableUID>
+            <indexed><![CDATA[1]]></indexed>
+            <notNull><![CDATA[1]]></notNull>
+            <uid><![CDATA[8CD1D076-59CF-45A1-9AE3-7C11F2F538E7]]></uid>
+            <unsigned><![CDATA[0]]></unsigned>
+        </SQLField>
+        <SQLField>
             <name><![CDATA[type]]></name>
             <type><![CDATA[account_type]]></type>
             <notNull><![CDATA[1]]></notNull>
@@ -140,6 +158,7 @@
         <SQLField>
             <name><![CDATA[name]]></name>
             <type><![CDATA[TEXT]]></type>
+            <forcedUnique><![CDATA[0]]></forcedUnique>
             <notNull><![CDATA[1]]></notNull>
             <uid><![CDATA[BE89B1FF-7809-40BF-AD9B-D8956BF9620E]]></uid>
         </SQLField>
@@ -164,6 +183,8 @@
             <notNull><![CDATA[1]]></notNull>
             <uid><![CDATA[C78F00C6-288C-4E72-9188-9A02D1C744C0]]></uid>
         </SQLField>
+        <labelWindowIndex><![CDATA[1]]></labelWindowIndex>
+        <ui.treeExpanded><![CDATA[1]]></ui.treeExpanded>
         <uid><![CDATA[B20F4C16-55B7-49C3-8379-40C7A1823A38]]></uid>
     </SQLTable>
     <SQLTable>
@@ -224,17 +245,17 @@
         <overviewPanelHidden><![CDATA[0]]></overviewPanelHidden>
         <pageBoundariesVisible><![CDATA[0]]></pageBoundariesVisible>
         <PageGridVisible><![CDATA[1]]></PageGridVisible>
-        <RightSidebarWidth><![CDATA[1185.000000]]></RightSidebarWidth>
+        <RightSidebarWidth><![CDATA[1309.000000]]></RightSidebarWidth>
         <sidebarIndex><![CDATA[0]]></sidebarIndex>
         <snapToGrid><![CDATA[1]]></snapToGrid>
         <SourceSidebarWidth><![CDATA[312.000000]]></SourceSidebarWidth>
         <SQLEditorFileFormatVersion><![CDATA[4]]></SQLEditorFileFormatVersion>
         <uid><![CDATA[5EE6AB1C-3B72-4FB0-B4AF-348C9362DFB9]]></uid>
-        <windowHeight><![CDATA[1095.000000]]></windowHeight>
-        <windowLocationX><![CDATA[1330.000000]]></windowLocationX>
-        <windowLocationY><![CDATA[146.000000]]></windowLocationY>
+        <windowHeight><![CDATA[862.000000]]></windowHeight>
+        <windowLocationX><![CDATA[347.000000]]></windowLocationX>
+        <windowLocationY><![CDATA[415.000000]]></windowLocationY>
         <windowScrollOrigin><![CDATA[{0, 0}]]></windowScrollOrigin>
-        <windowWidth><![CDATA[1462.000000]]></windowWidth>
+        <windowWidth><![CDATA[1586.000000]]></windowWidth>
     </SQLDocumentInfo>
     <AllowsIndexRenamingOnInsert><![CDATA[1]]></AllowsIndexRenamingOnInsert>
     <defaultLabelExpanded><![CDATA[1]]></defaultLabelExpanded>
