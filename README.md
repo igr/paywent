@@ -1,5 +1,7 @@
 # paywent (pwt)
 
+![](https://img.shields.io/badge/v1.1-pwt-brightgreen)
+
 ![](paywent.png)
 
 Java11/SpringBoot/JPA/Postgres/Kafka example of Clean Architecture and more.
@@ -29,6 +31,10 @@ Lost?
 ```shell
 ./pwt.sh
 ```
+
+Not ARM?
+
+Update `docker-compose.yaml`
 
 ## Facts
 

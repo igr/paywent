@@ -25,9 +25,7 @@ Clean architecture. Dependencies:
 + Implementation module depends only on other interfaces. 
 + Boot module provides implementation.
 
-What is questionable?
-
-+ While all APIs are pure functions, they do not declare the dependencies.
+![](arh.png)
 
 ## Verbs, no Nouns!
 
