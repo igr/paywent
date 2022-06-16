@@ -20,6 +20,7 @@ public interface AccountsApiMapper extends AccountIdMappers, ProfileIdMappers, R
     @Mapping(target = "id", source = "id", qualifiedBy = MapAccountIdToString.class)
     @Mapping(target = "profileId", source = "profileId", qualifiedBy = MapProfileIdToString.class)
     @Mapping(target = "name", source = "name", qualifiedBy = MapRawTypeToString.class)
+    @Mapping(target = "number", source = "number", qualifiedBy = MapRawTypeToString.class)
     AccountResponse mapToAccountResponse(Account account);
 
 }
