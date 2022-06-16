@@ -40,5 +40,5 @@ Update `docker-compose.yaml`
 ## Facts
 
 + BSD 2-Clause License.
-+ Total time invested: `24h`.
++ Total time invested: `4 working days`.
 + Fun.

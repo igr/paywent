@@ -17,20 +17,20 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class AccountsApiImpl implements AccountsApi {
 
-	private final AddAccount addAccount;
-	private final ListAccounts listAccounts;
+    private final AddAccount addAccount;
+    private final ListAccounts listAccounts;
 
-	private final AccountsApiMapper mapper;
+    private final AccountsApiMapper mapper;
 
-	@Override
-	public ResponseEntity<List<AccountResponse>> _getAccounts() {
-		return ResponseEntity.ok(
-				listAccounts.invoke()
-						.stream()
-						.map(mapper::mapToAccountResponse)
-						.collect(Collectors.toList())
-		);
-	}
+    @Override
+    public ResponseEntity<List<AccountResponse>> _getAccounts() {
+        return ResponseEntity.ok(
+            listAccounts.invoke()
+                .stream()
+                .map(mapper::mapToAccountResponse)
+                .collect(Collectors.toList())
+        );
+    }
 
 	@Override
 	public ResponseEntity<AccountResponse> _postAccounts(final NewAccountRequest newAccountRequest) {

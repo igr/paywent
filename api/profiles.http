@@ -12,8 +12,12 @@ POST {{server}}/api/v1/profiles
 Content-Type: application/json
 
 {
-  "name": "Julian"
+    "name": "Julian"
 }
 
 ### List all profiles
 GET {{server}}/api/v1/profiles
+
+
+### Get single profile
+GET {{server}}/api/v1/profiles/c61e9494-f4c5-4b0a-af65-6bdf3bb5a032

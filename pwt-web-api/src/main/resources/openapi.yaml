@@ -122,6 +122,17 @@ components:
         receiver:
           type: string
       description: New payment request.
+    ProfilePortfolioResponse:
+      title: ProfilePortfolioResponse
+      type: object
+      description: Profile with Accounts.
+      properties:
+        profile:
+          $ref: '#/components/schemas/ProfileResponse'
+        accounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/AccountResponse'
 paths:
   /profiles:
     post:
@@ -162,7 +173,7 @@ paths:
   '/profiles/{id}':
     get:
       summary: Gets a Profile by its ID.
-      description: Returns a single Profile.
+      description: Returns a single Profile portfolio.
       operationId: get-profile-id
       tags:
         - profiles
@@ -179,7 +190,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ProfileResponse'
+                $ref: '#/components/schemas/ProfilePortfolioResponse'
               examples: {}
     delete:
       summary: Deletes a Profile by its given ID.
