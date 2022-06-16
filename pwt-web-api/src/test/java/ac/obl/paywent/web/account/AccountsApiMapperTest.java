@@ -15,7 +15,7 @@ class AccountsApiMapperTest {
     final PodamFactory factory = new PodamFactoryImpl();
 
     @Test
-    void mapToNewAccount() {
+    void mapToNewAccount_maps_all_data() {
         final NewAccountRequest newAccountRequest = factory.manufacturePojo(NewAccountRequest.class);
         newAccountRequest.setProfileId(UUID.randomUUID().toString());
         final NewAccount newAccount = new AccountsApiMapperImpl().mapToNewAccount(newAccountRequest);

@@ -11,6 +11,6 @@ import java.time.Instant;
 @RequiredArgsConstructor
 public class Profile {
     private final ProfileId id;
-    private final String name;
+    private final ProfileName name;
     private final Instant createdAt;
 }
