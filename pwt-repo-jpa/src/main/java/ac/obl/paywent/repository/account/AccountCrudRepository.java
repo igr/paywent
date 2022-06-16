@@ -5,4 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.UUID;
 
 public interface AccountCrudRepository extends CrudRepository<AccountEntity, UUID> {
+
+    int countAccountEntitiesByIdAndProfileId(UUID id, UUID profileId);
 }
