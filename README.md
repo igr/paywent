@@ -1,6 +1,7 @@
 # paywent (pwt)
 
-![](https://img.shields.io/badge/v1.1-pwt-brightgreen)
+![](https://img.shields.io/badge/v1.1-pwt-blue)
+[![Build](https://github.com/igr/paywent/actions/workflows/maven-build.yml/badge.svg)](https://github.com/igr/paywent/actions/workflows/maven-build.yml)
 
 ![](paywent.png)
 

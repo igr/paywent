@@ -3,10 +3,10 @@ package ac.obl.paywent.domain;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class ProfileName implements RawType<String> {
+public class AccountName implements RawType<String> {
 
-    public static ProfileName of(final String value) {
-        return new ProfileName(value);
+    public static AccountName of(final String value) {
+        return new AccountName(value);
     }
 
     private final String value;
