@@ -15,8 +15,10 @@
 	<modules>
 		<module>pwt-domain</module>
 		<module>pwt-repo-api</module>
+		<module>pwt-repo-spec</module>
 		<module>pwt-repo-jpa</module>
 		<module>pwt-app</module>
+		<module>pwt-app-spec</module>
 		<module>pwt-app-impl</module>
 		<module>pwt-web-api</module>
 		<module>pwt-eventbus</module>

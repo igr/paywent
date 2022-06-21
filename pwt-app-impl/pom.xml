@@ -29,6 +29,19 @@
 			<artifactId>pwt-repo-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+		<!-- test -->
+		<dependency>
+			<groupId>ac.obl</groupId>
+			<artifactId>pwt-app-spec</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>ac.obl</groupId>
+			<artifactId>pwt-repo-spec</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
+		</dependency>
 
 		<!-- spring -->
 		<dependency>

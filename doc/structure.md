@@ -14,6 +14,10 @@ App is split in modules:
 + `web-api` - web-api layer. API-first approach.
 + `boot` - configuration and boostrap of the web app.
 
+Specification:
+
++ `*-spec` - very light take on specification definition.
+
 Client:
 
 + `client` - automatically generated client.
@@ -22,7 +26,7 @@ Client:
 Clean architecture. Dependencies:
 
 + Interface module depends only on other interfaces.
-+ Implementation module depends only on other interfaces. 
++ Implementation module depends only on other interfaces.
 + Boot module provides implementation.
 
 ![](arh.png)
